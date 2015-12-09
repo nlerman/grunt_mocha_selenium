@@ -1,0 +1,26 @@
+{
+  "name": "grunt-mocha-selenium",
+  "version": "0.0.0",
+  "dependencies": {
+     "wd": "^0.3.3",
+    "async": "^0.9.0",
+    "mocha": "^1.20.0",
+    "sauce-tunnel": "^2.1.0",
+    "selenium-launcher": "git+https://github.com/wookiehangover/nodejs-selenium-launcher.git"
+    },
+  "repository": {},
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.10.0",
+    "phantomjs": "~1.9.2"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.0",
+    "phantomjs": "~1.9.2"
+  }
+}
