@@ -18,7 +18,7 @@ module.exports = function (grunt) {
         }
       },
       selenium: {
-        src: ['test/sanity.js'],
+        src: ['test/spec/simpleTest.js'],
         options: {
           testName: 'selenium test',
           concurrency: 2,
@@ -26,7 +26,7 @@ module.exports = function (grunt) {
           port:   '4444',
           autoInstall: true,
           browsers: [
-            {browserName: 'firefox'},
+           //{browserName: 'firefox'},
             // {browserName: 'internet explorer', platform: 'Windows 8', version: '11'},
             {browserName: 'chrome'}
           ]
@@ -40,6 +40,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
 
   // Default task.
-  grunt.registerTask('test', [ 'mochaWebdriver:phantom' ]);
+  grunt.registerTask('test', [ 'mochaWebdriver:phantom'/*,'mochaWebdriver:selenium' */]);
 
 };
