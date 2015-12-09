@@ -10,5 +10,5 @@ Make sure you have gurnt client installed: In your terminal type "npm install -g
 In your terminal go to the project directory and type "grunt test". 
 
 
-If you wish to run the test with anything other then chrome, uncomment the code for the preffered browser(or phantomJS headless browser) or follow the example to add any browser not included. 
+
 
