@@ -4,21 +4,23 @@ module.exports = function (grunt) {
 
   // Project configuration.
   grunt.initConfig({
+
     mochaWebdriver: {
       options: {
         timeout: 1000 * 60 * 3
       },
       phantom: {
-        src: ['test/spec/simpleTest.js'],
+        src: ['test/spec/*.js'],
         options: {
           testName: 'phantom test',
           usePhantom: true,
           phantomPort: 5555,
+          usePromises: true,
           reporter: 'spec'
         }
       },
       selenium: {
-        src: ['test/spec/simpleTest.js'],
+        src: ['test/spec/*.js'],
         options: {
           testName: 'selenium test',
           concurrency: 2,
@@ -26,12 +28,10 @@ module.exports = function (grunt) {
           port:   '4444',
           autoInstall: true,
           browsers: [
-           //{browserName: 'firefox'},
-            // {browserName: 'internet explorer', platform: 'Windows 8', version: '11'},
             {browserName: 'chrome'}
           ]
         }
-      },
+      }
     }
   });
 
@@ -40,6 +40,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
 
   // Default task.
-  grunt.registerTask('test', [ 'mochaWebdriver:phantom'/*,'mochaWebdriver:selenium' */]);
+  grunt.registerTask('test', ['mochaWebdriver:phantom']);
 
+  grunt.registerTask('testSelenium', ['mochaWebdriver:selenium']);
+  grunt.registerTask('default', ['jshint', 'test']);
 };
